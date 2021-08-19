@@ -1,2 +1,4 @@
 # LogTemperature
 Every minute checks if one or more temperature probes are connected and logs there recorded temperature to a file called tempLog.log
+
+Log Temperature starts off by declaring a string builder, which will be used later to log our information. We start with a while loop set to true so our program runs unless exited. We then perform a for loop that iterates 10 times. This checks the indexes of devices connected to the JNIOR from 1 - 10. Each time the loop iterates, it checking the JNIOR's registry for connected temperature probes using the isTempPresent function. This returns the index of a temperature probe connected to the JNIOR. Once the index is returned its then used to get the temperature of that temperature probe, and then uses the string builder to construct a sentence listing time, index, and temperature from the temperature probe. This is then logged to a log file called tempLog.log. The while loop returns re-logging the values every minute.
